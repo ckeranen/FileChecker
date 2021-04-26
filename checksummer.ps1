@@ -1,6 +1,15 @@
+<#
+.Synopsis
+   Check checksum of files
+.DESCRIPTION
+   Check MD5, SHA256 or SHA512 checksum of files 
+.EXAMPLE
+   checksummer.ps1 -Filename example.file -Algorithmtype SHA256
+#>
+
 param	(
 		[Parameter(Mandatory=$true,HelpMessage="Write filename")]
-		[string[]]$filename,
+		[string[]]$Filename,
 		[string]$Algorithmtype = 'SHA256'
 	)
 
