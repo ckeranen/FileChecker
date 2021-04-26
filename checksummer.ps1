@@ -4,7 +4,6 @@ param	(
 		[string]$Algorithmtype = 'SHA256'
 	)
 
-#$filenames = (Get-Content checksumfiles.txt)
 foreach ($filename in $filenames)
 {
 	Write-Host "Getting checksum from $filename" -ForegroundColor Yellow
