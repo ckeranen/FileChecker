@@ -1,14 +1,14 @@
 param	(
 		[Parameter(Mandatory=$true,HelpMessage="Write filename")]
-		[string[]]$filenames,
+		[string[]]$filename,
 		[string]$Algorithmtype = 'SHA256'
 	)
 
-foreach ($filename in $filenames)
+foreach ($filenames in $filename)
 {
-	Write-Host "Getting checksum from $filename" -ForegroundColor Yellow
-	Get-FileHash -Algorithm $Algorithmtype $filename
-	Get-FileHash -Algorithm $Algorithmtype $filename | Out-File \tmp\checkedfiles.txt -Append
+	Write-Host "Getting checksum from $filenames" -ForegroundColor Yellow
+	Get-FileHash -Algorithm $Algorithmtype $filenames
+	Get-FileHash -Algorithm $Algorithmtype $filenames | Out-File \tmp\checkedfiles.txt -Append
 	'--------------------------------------------------'
 
 }
